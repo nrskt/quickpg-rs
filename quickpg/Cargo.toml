@@ -1,7 +1,7 @@
 [package]
-name = "quickpg_model"
+name = "quickpg"
 version = "0.1.0"
 authors = ["nrskt <norisuke@curama.jp>"]
 
 [dependencies]
-diesel = { version = "1.3.2", features=["postgres"]}
+postgres = "0.15"

@@ -1,5 +1,5 @@
 [workspace]
 
 members = [
-    "quickpg_model"
+    "quickpg",
 ]
