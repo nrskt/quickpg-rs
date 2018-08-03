@@ -1,0 +1,8 @@
+[package]
+name = "quickpg_ui"
+version = "0.1.0"
+authors = ["nrskt <norisuke@curama.jp>"]
+
+[dependencies]
+termion = "1.5"
+tui = "0.2"
