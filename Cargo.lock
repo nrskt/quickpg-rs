@@ -239,6 +239,15 @@ name = "quickpg"
 version = "0.1.0"
 dependencies = [
  "postgres 0.15.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "quickpg_ui 0.1.0",
+ "termion 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "tui 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "quickpg_ui"
+version = "0.1.0"
+dependencies = [
  "termion 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "tui 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]

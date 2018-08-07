@@ -1,5 +1,4 @@
-use super::traits::{Block, Borders, Draw, MouseBackend, Rect, Terminal, Widget};
-use tui::widgets::Paragraph;
+use super::traits::{Block, Borders, Draw, MouseBackend, Paragraph, Rect, Terminal, Widget};
 
 pub struct FilterBox {
     input: String,

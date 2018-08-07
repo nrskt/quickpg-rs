@@ -7,3 +7,4 @@ authors = ["nrskt <norisuke@curama.jp>"]
 postgres = "0.15"
 termion = "1.5"
 tui = "0.2"
+quickpg_ui = { path = "../quickpg_ui" }
