@@ -70,7 +70,7 @@ impl PgTableList {
 }
 
 impl Draw for PgTableList {
-    fn draw(&self, t: &mut Terminal<MouseBackend>, layout: &Rect) {
+    fn draw(self, t: &mut Terminal<MouseBackend>, layout: &Rect) {
         SelectableList::default()
             .block(Block::default().borders(Borders::ALL).title("Tables"))
             .items(&self.displayed_tables())

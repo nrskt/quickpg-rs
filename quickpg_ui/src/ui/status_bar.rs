@@ -36,7 +36,7 @@ impl StatusBar {
 }
 
 impl Draw for StatusBar {
-    fn draw(&self, t: &mut Terminal<MouseBackend>, layout: &Rect) {
+    fn draw(self, t: &mut Terminal<MouseBackend>, layout: &Rect) {
         Paragraph::default()
             .block(Block::default().title("Status").borders(Borders::ALL))
             .wrap(true)

@@ -5,5 +5,5 @@ pub use tui::widgets::{Block, Borders, Paragraph, Row, SelectableList, Table, Wi
 pub use tui::Terminal;
 
 pub trait Draw {
-    fn draw(&self, t: &mut Terminal<MouseBackend>, layout: &Rect);
+    fn draw(self, t: &mut Terminal<MouseBackend>, layout: &Rect);
 }

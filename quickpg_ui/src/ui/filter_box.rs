@@ -21,7 +21,7 @@ impl FilterBox {
 }
 
 impl Draw for FilterBox {
-    fn draw(&self, t: &mut Terminal<MouseBackend>, layout: &Rect) {
+    fn draw(self, t: &mut Terminal<MouseBackend>, layout: &Rect) {
         Paragraph::default()
             .block(Block::default().title("Filter").borders(Borders::ALL))
             .wrap(true)

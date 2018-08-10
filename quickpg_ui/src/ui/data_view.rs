@@ -1,4 +1,5 @@
 use std::iter::Iterator;
+use std::slice::Iter;
 
 use super::traits::{Block, Color, Draw, MouseBackend, Rect, Row, Style, Table, Terminal, Widget};
 
@@ -40,10 +41,14 @@ impl DataItem {
 }
 
 impl Draw for DataView {
-    fn draw(&self, t: &mut Terminal<MouseBackend>, layout: &Rect) {
-        // let row_style = Style::default().fg(Color::White);
+    fn draw(self, t: &mut Terminal<MouseBackend>, layout: &Rect) {
+        let row_style = Style::default().fg(Color::White);
 
-        // let fields = ["field_name", "value"].into_iter();
+        let fields = ["field_name", "value"].into_iter();
+        let rows = self.items.into_iter().map(|item| item.record());
+        let rows = rows.map(|row| Row::Data(row.into_iter()));
+        // let rows: Vec<Row<'_, Iter<'_, &str>, &&str>> =
+        //     &self.rows().into_iter().map(|row| Row::Data(row)).collect();
         // let rows = &self
         //     .rows()
         //     .iter()
@@ -52,14 +57,13 @@ impl Draw for DataView {
         //     .rows()
         //     .iter()
         //     .map(|row| Row::StyledData(row.iter(), &row_style));
-        unimplemented!()
 
-        // Table::new(fields, rows)
-        //     .block(Block::default().title("Table"))
-        //     .header_style(Style::default().fg(Color::Yellow))
-        //     .widths(&[10, 30])
-        //     .style(Style::default().fg(Color::White))
-        //     .column_spacing(1)
-        //     .render(t, &layout);
+        Table::new(fields, rows)
+            .block(Block::default().title("Table"))
+            .header_style(Style::default().fg(Color::Yellow))
+            .widths(&[10, 30])
+            .style(Style::default().fg(Color::White))
+            .column_spacing(1)
+            .render(t, &layout);
     }
 }
